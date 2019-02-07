@@ -5,6 +5,8 @@
 
 .sumoStopScroll{overflow:hidden;}
 
+.SumoSelect > select { height: 0; width: 0; padding: 0; }
+
 /* Filtering style */
 .SumoSelect .hidden { display:none; }
 .SumoSelect .search-txt{display:none;outline:none;}
