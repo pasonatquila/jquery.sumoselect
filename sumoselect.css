@@ -5,6 +5,9 @@
 
 .sumoStopScroll{overflow:hidden;}
 
+/* SumoSelectバグ対策 見えないoptionタグが選択できてしまう現象の対策
+ * IE11ではoptionタグにCSSが効かないため、selectタグごとサイズ0pxにして選択できないようにする
+ */
 .SumoSelect > select { height: 0; width: 0; padding: 0; }
 
 /* Filtering style */
