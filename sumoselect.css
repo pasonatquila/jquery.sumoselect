@@ -5,11 +5,6 @@
 
 .sumoStopScroll{overflow:hidden;}
 
-/* SumoSelectバグ対策 見えないoptionタグが選択できてしまう現象の対策
- * IE11ではoptionタグにCSSが効かないため、selectタグごとサイズ0pxにして選択できないようにする
- */
-.SumoSelect > select { height: 0; width: 0; padding: 0; }
-
 /* Filtering style */
 .SumoSelect .hidden { display:none; }
 .SumoSelect .search-txt{display:none;outline:none;}
@@ -18,7 +13,8 @@
 .SumoSelect.open>.search>span, .SumoSelect.open>.search>label{visibility:hidden;}
 
 /*this is applied on that hidden select. DO NOT USE display:none; or visiblity:hidden; and Do not override any of these properties. */
-.SelectClass,.SumoUnder { position: absolute; top: 0; left: 0; right: 0; height: 100%; width: 100%; border: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
+/* Bootstrapのselect[multiple]にheightを上書きされるため、height: 100%をimportantとする。 */
+.SelectClass,.SumoUnder { position: absolute; top: 0; left: 0; right: 0; height: 100% !important; width: 100%; border: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
 .SelectClass{z-index: 1;}
 
     .SumoSelect > .optWrapper > .options  li.opt label, .SumoSelect > .CaptionCont,.SumoSelect .select-all > label { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
